@@ -7,5 +7,7 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   integrations: [auth()],
   output: "server",
-  adapter: vercel()
+  adapter: vercel({
+    edgeMiddleware: true
+  })
 });
